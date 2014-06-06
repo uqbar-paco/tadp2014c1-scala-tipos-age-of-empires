@@ -7,4 +7,7 @@ class Muralla extends Defensor {
 
   def potencialDefensivo(): Integer = 25
 
+  def seAtacadoPorUnTanque(tanque: Tanque) =
+    tanque.atacarA(this)
+
 }

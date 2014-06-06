@@ -5,13 +5,42 @@ class AtaquesTestCase {
 
   @Test
   def conanAtacaAAtila = {
-    val atila = new Guerrero
-    val conan = new Guerrero
+    val atila: Defensor = new Guerrero
+    val conan: Atacante = new Guerrero
+    val otroConan = conan
 
-    conan.atacarA(atila)
+    otroConan.atacarA(atila)
 
-    assertEquals(90, atila.energia)
+    assertEquals(90, atila.getEnergia)
   }
+
+  @Test
+  def investigando = {
+    val tanque = new Tanque
+    val atila = new Guerrero
+    val muralla = new Muralla
+
+    hacerPelear(tanque, atila)
+    hacerPelear(tanque, muralla)
+
+    assertEquals(50, atila.getEnergia)
+    assertEquals(100, tanque.getEnergia)
+    assertEquals(-500, muralla.getEnergia)
+  }
+
+  def hacerPelear(atacante: Atacante, defensor: Defensor) =
+    atacante.atacarA(defensor)
+
+  //  @Test
+  //  def atacarDefensorSobreescrito = {
+  //    val tanque = new Tanque
+  //    val atila = new Guerrero
+  //
+  //    tanque.atacarA(atila)
+  //
+  //    assertEquals(200, tanque.getEnergia)
+  //    assertEquals(90, atila.getEnergia)
+  //  }
 
   @Test
   def espadachinAtacaConMasDanio = {
