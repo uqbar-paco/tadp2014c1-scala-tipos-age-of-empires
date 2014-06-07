@@ -1,46 +1,17 @@
-import org.junit.Test
 import org.junit.Assert._
+import org.junit.Test
 
 class AtaquesTestCase {
 
   @Test
   def conanAtacaAAtila = {
-    val atila: Defensor = new Guerrero
-    val conan: Atacante = new Guerrero
-    val otroConan = conan
-
-    otroConan.atacarA(atila)
-
-    assertEquals(90, atila.getEnergia)
-  }
-
-  @Test
-  def investigando = {
-    val tanque = new Tanque
     val atila = new Guerrero
-    val muralla = new Muralla
+    val conan = new Guerrero
 
-    hacerPelear(tanque, atila)
-    hacerPelear(tanque, muralla)
+    conan.atacarA(atila)
 
-    assertEquals(50, atila.getEnergia)
-    assertEquals(100, tanque.getEnergia)
-    assertEquals(-500, muralla.getEnergia)
+    assertEquals(90, atila.energia)
   }
-
-  def hacerPelear(atacante: Atacante, defensor: Defensor) =
-    atacante.atacarA(defensor)
-
-  //  @Test
-  //  def atacarDefensorSobreescrito = {
-  //    val tanque = new Tanque
-  //    val atila = new Guerrero
-  //
-  //    tanque.atacarA(atila)
-  //
-  //    assertEquals(200, tanque.getEnergia)
-  //    assertEquals(90, atila.getEnergia)
-  //  }
 
   @Test
   def espadachinAtacaConMasDanio = {
@@ -70,6 +41,10 @@ class AtaquesTestCase {
     misil.atacarA(atila)
 
     assertEquals(30, atila.energia)
+  }
+  
+  def testTipadoEstructural () {
+     new Espadachin(10, new Maza)
   }
 
   //  @Test
