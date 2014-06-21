@@ -1,3 +1,5 @@
+package guerreros
+
 class Guerrero extends Atacante with Defensor {
 
   var energia = 100
@@ -10,4 +12,9 @@ class Guerrero extends Atacante with Defensor {
 
   def seAtacadoPorUnTanque(tanque: Tanque) =
     tanque.atacarA(this)
+
+  def vivo = energia > 0
+
+  def restaurarEnergia() =
+    energia = 100
 }

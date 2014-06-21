@@ -1,3 +1,5 @@
+package guerreros
+
 class Planta extends Defensor {
 
   def setEnergia(energia: Integer): Unit = {}

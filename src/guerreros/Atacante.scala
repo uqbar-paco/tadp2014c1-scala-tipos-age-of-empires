@@ -1,3 +1,5 @@
+package guerreros
+
 trait Atacante {
 
   def potencialOfensivo: Integer

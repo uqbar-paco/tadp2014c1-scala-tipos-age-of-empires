@@ -1,3 +1,5 @@
+package guerreros
+
 class Tanque extends Guerrero {
 
   override def atacarA(defensor: Defensor) = {

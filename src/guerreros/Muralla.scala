@@ -1,3 +1,5 @@
+package guerreros
+
 class Muralla extends Defensor {
 
   var energia = 500
@@ -9,5 +11,7 @@ class Muralla extends Defensor {
 
   def seAtacadoPorUnTanque(tanque: Tanque) =
     tanque.atacarA(this)
+    
+  def reparar(cantidadLadrillos:Int) =  energia += cantidadLadrillos * 2
 
 }
